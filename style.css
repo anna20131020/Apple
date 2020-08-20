@@ -171,6 +171,8 @@ select {
   width: 100%;
   position: fixed;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .header-list {
@@ -190,6 +192,11 @@ select {
   margin-right: 74px;
   color: white;
 }
+
+.globalMenuSp,.apple-logo,.bag {
+  display: none;
+}
+
 
 /*-----infomation----*/
 
@@ -958,75 +965,76 @@ select {
 }
 
 .footer {
-    height: 700px;
-    background-color: rgb(245,245,247);
-    padding: 0 230px 0 230px;
+  height: 700px;
+  background-color: rgb(245,245,247);
+  padding: 0 230px 0 230px;
 }
 
 .footer-list {
-    padding: 19px 0 25px;
-    border-bottom: 1px solid #d2d2d7;
-    display: inline-block;
+  padding: 19px 0 25px;
+  border-bottom: 1px solid #d2d2d7;
+  display: inline-block;
 }
 
 .footer-list-note {
-    font-size: 12px;
-    color: #86868b;
-    list-style-position: inside;
+  font-size: 12px;
+  color: #86868b;
+  list-style-position: inside;
 }
 
 .footer-list-note-1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-list-note-2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-list-note-3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-list ul {
-    font-size: 12px;
-    color: #86868b;
-    float: left;
-    list-style: none;
+  font-size: 12px;
+  color: #86868b;
+  float: left;
+  list-style: none;
 }
 
 .footer-list a{
-    font-size: 12px;
-    color: #86868b;
-    text-decoration: none;
+  font-size: 12px;
+  color: #86868b;
+  text-decoration: none;
 }
 
 .footer-list a:hover {
-    text-decoration: underline;
-    text-decoration-color: #000;
+  text-decoration: underline;
+  text-decoration-color: #000;
 }
 
 .footer-list-linkmenu {
-    display: flex;
-    padding: 23px 0 35px;
+  display: flex;
+  padding: 23px 0 35px;
+  line-height: 15px;
 }
 
 .footer-list-linkmenu-1 {
-    flex: 1;
+  flex: 1;
 }
 
 .footer-list-linkmenu h5 {
-    font-size: 11px;
-    font-weight: bold;
-    color: #1d1d1f;
-    margin-bottom: 17px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #1d1d1f;
+  margin-bottom: 17px;
 }
 
 .footer-list-linkmenu a {
-    font-size: 11px;
-    color: #1d1d1f;
-    display: block;
-    padding-bottom: 10px;
-    text-decoration: none;
+  font-size: 10px;
+  color: #1d1d1f;
+  display: block;
+  padding-bottom: 10px;
+  text-decoration: none;
 }
 
 .footer-list-linkmenu a:hover{
@@ -1069,9 +1077,8 @@ footer-list-linkmenu-5-apple {
 /*------applestore---*/
 
 .footer-list-applestore {
-    margin-bottom: 14px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #d2d2d7;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .footer-list-applestore p {
@@ -1093,6 +1100,8 @@ footer-list-linkmenu-5-apple {
 
 .footer-list-container {
   display: flex;
+  padding-top: 10px;
+  border-top: 1px solid #d2d2d7;
 }
 
 
@@ -1131,4 +1140,373 @@ footer-list-linkmenu-5-apple {
   text-decoration: none;
   color: #000;
   padding: 1px 2px 0 2px;
+}
+
+#dropmenu {
+  display: none;
+}
+
+@media (max-width:992px){
+
+  body {
+    width: 100%;
+  }
+
+  .header-list {
+    display: none;
+  }
+
+  .apple-logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .bag {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  left : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 5px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+  display: block;
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: white;
+  background: #000;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: all 0.6s;
+  width: 100%;
+}
+
+nav.globalMenuSp ul {
+  background: #ccc;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #fff;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+
+
+
+  .infomation p{
+  margin: 0 20px 0 20px;
+  }
+
+  .top-wrapper {
+  width: 100%;
+  }
+  .top-wrapper-se {
+  width: 100%;
+  }
+
+  .top-wrapper h1 {
+  font-size: 30px;
+  }
+
+  .top-wrapper-se h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-se p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-se-image img {
+  display: none;
+  }
+
+  .top-wrapper-se-link-detailed {
+  font-size: 20px;
+  }
+  .top-wrapper-11 {
+  width: 100%;
+  }
+
+  .top-wrapper-11 h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-11 p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-11-image img {
+  height: 350px;
+  width: 1000px;
+  margin-top: 300px;
+  }
+
+  .top-wrapper-11-link-detailed {
+  font-size: 20px;
+  }
+
+  .top-wrapper-ipad {
+  width: 100%;
+  }
+
+  .top-wrapper-ipad h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-ipad p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-ipad-image {
+  margin-top: 0;
+  text-align: center;
+  }
+  .top-wrapper-ipad-image img {
+  height: 650px;
+  width: 2400px;
+  margin: -50px 0 0 -780px;
+  }
+
+  .top-wrapper-ipad-link-detailed {
+  font-size: 20px;
+  }
+
+  .top-wrapper-imac {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-imac h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-imac p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-imac-link-detailed {
+  font-size: 20px;
+  }
+
+  .top-wrapper-music {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-music h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-music p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-nmp {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-nmp h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-nmp p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-watch {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-watch h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-watch p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-work {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-work h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-work p {
+  font-size: 15px;
+  text-align: center;
+  }
+
+  .top-wrapper-restart {
+  width: 100%;
+  margin: 0;
+  }
+
+  .top-wrapper-restart h3 {
+  font-size: 18px;
+  padding-top: 10px;
+  }
+
+  .top-wrapper-restart p {
+  font-size: 15px;
+  }
+
+  .top-wrapper-restart-image {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  }
+
+  .footer {
+  padding: 20px 10px 20px 10px;
+  }
+
+  .footer-list-note {
+  line-height: 20px;
+  font-size: 8px;
+  }
+
+  .footer-dropmenu {
+  width: 100%;
+  display: block;
+  }
+
+  #dropmenu {
+  display: block;
+  height: 250px;
+  position: relative;
+  list-style-type: none;
+  margin: 20px 0;
+  background: rgb(245,245,247);
+  }
+
+  .dropmenu-title{
+  width:  100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border-bottom:1px solid #d2d2d7;
+  font-size: 10px;
+  display: flex;
+  }
+
+  .dropmenu-title p {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 10px 0 6px;
+  color: #000;
+  background: rgb(245,245,247);
+  font-size: 12px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+  .dropmenu-title span {
+    position:absolute;
+    color:#000;
+    font-size:13px;
+    text-align: right;
+  }
+
+.dropmenu-list {
+  display: none;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  border-radius: 0 0 3px 3px;
+}
+.dropmenu-list li{
+  overflow: hidden;
+  width: 100%;
+  color: #000;
+}
+.dropmenu-list li a{
+  padding: 10px 15px;
+  background: rgb(245,245,247);
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-list-linkmenu {
+display: none;
+  }
 }
