@@ -1583,7 +1583,6 @@ footer-list-linkmenu-5-apple {
     background-color: rgb(245,245,247);
 }
 .dropmenu-list li{
-    width: 100%;
     color: #000;
     padding: 10px;
 }
@@ -1625,7 +1624,7 @@ display: none;
     height: 320px;
     max-width: 1100px;
   }
-  .top-wrapper-imac-link-detailed,.top-wrapper-imac-link-shop,.top-wrapper-11-link-detailed,.top-wrapper-11-link-shop {
+  .top-wrapper-imac-link-detailed,.top-wrapper-imac-link-shop,.top-wrapper-11-link-detailed,.top-wrapper-11-link-shop ,.top-wrapper-se-link-detailed,.top-wrapper-se-link-shop{
     font-size: 16px;
   }
   .footer-list-container {
